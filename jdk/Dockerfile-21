@@ -1,0 +1,7 @@
+FROM eclipse-temurin:21-jdk
+
+# 安装tshark ssh
+RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections && \
+    DEBIAN_FRONTEND=noninteractive apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y tshark openssh-client
+
