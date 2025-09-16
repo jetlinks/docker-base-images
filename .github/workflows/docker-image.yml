@@ -22,7 +22,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./jdk/Dockerfile-21
+          file: jdk/Dockerfile-21
           platforms: linux/amd64,linux/arm64
           push: true
           tags: jetlinks/base-jdk-21
