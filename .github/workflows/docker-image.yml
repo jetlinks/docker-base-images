@@ -24,6 +24,6 @@ jobs:
         with:
           context: ./jdk
           file: ./jdk/Dockerfile-21
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm64,linux/arm64/v8,linux/riscv64
           push: true
           tags: jetlinks/base-jdk-21
