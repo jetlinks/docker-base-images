@@ -35,6 +35,9 @@ jobs:
           file: ./jdk/Dockerfile-21
           platforms: linux/amd64,linux/arm64
           pull: true
+          # ACR 不支持构建证明清单使用的 OCI empty config。
+          provenance: false
+          sbom: false
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
           cache-from: type=gha,scope=base-jdk-21
           cache-to: type=gha,scope=base-jdk-21,mode=max
@@ -47,6 +50,8 @@ jobs:
           file: ./jdk/Dockerfile-21-all
           platforms: linux/amd64,linux/arm64
           pull: true
+          provenance: false
+          sbom: false
           push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
           cache-from: type=gha,scope=base-jdk-21-all
           cache-to: type=gha,scope=base-jdk-21-all,mode=max
