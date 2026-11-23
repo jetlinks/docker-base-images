@@ -1,4 +1,5 @@
-FROM eclipse-temurin:21-jdk
+# 固定 Ubuntu 24.04 系列，与扩展镜像的依赖保持一致。
+FROM eclipse-temurin:21-jdk-noble
 
 # 安装tshark ssh
 RUN echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections && \
